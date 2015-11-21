@@ -5,5 +5,5 @@
                  [ring/ring-jetty-adapter "1.4.0"]
                  [compojure "1.4.0"]]
   :plugins [[lein-ring "0.8.10"]]
-  :ring {:handler clj-math-api.core/handler}
-  :main clj-math-api.core)
+  :ring {:handler clj-math-api.core/app}
+  :main ^:skip-aot clj-math-api.core)

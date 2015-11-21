@@ -1,10 +1,10 @@
 (ns clj-math-api.core
   (:require [ring.util.response :as response]
+            [compojure.core :refer :all]
             [ring.adapter.jetty :as jetty]))
 
-(defn handler [request]
-  (-> (response/response "Hello, World!")
-      (response/content-type "text/html")))
+(defroutes app
+  (GET "/" [] "Hello, World!"))
 
 (defn -main []
-  (jetty/run-jetty handler {:port 3000}))
+  (jetty/run-jetty app {:port 3000}))
