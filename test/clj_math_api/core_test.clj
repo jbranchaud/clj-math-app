@@ -13,4 +13,7 @@
       (is (= (:body response) "2")))
     (let [response (app (mock/request :get "/11/plus/-3"))]
       (is (= (:status response) 200))
-      (is (= (:body response) "8")))))
+      (is (= (:body response) "8")))
+    (let [response (app (mock/request :get "/a/plus/b"))]
+      (is (= (:status response) 400))
+      (is (= (:body response) "Bad Request")))))
