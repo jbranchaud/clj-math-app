@@ -1,3 +1,3 @@
-# clj-math-api
+# clj-math-app
 
-> A Clojure API for doing basic maths
+> A Clojure app for doing basic maths

@@ -1,7 +1,7 @@
-(ns clj-math-api.core-test
+(ns clj-math-app.core-test
   (:require [clojure.test :refer :all]
             [ring.mock.request :as mock]
-            [clj-math-api.core :refer :all]))
+            [clj-math-app.core :refer :all]))
 
 (deftest test-app
   (testing "plus endpoint"

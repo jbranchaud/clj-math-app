@@ -1,4 +1,4 @@
-(ns clj-math-api.core
+(ns clj-math-app.core
   (:require [ring.util.response :as response]
             [compojure.core :refer :all]
             [compojure.handler :as handler]
