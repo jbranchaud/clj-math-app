@@ -5,6 +5,14 @@
             [compojure.route :as route]
             [ring.adapter.jetty :as jetty]))
 
+(defn wrap-html-response
+  [handler]
+  (fn [request]
+    (let [response (handler request)]
+      (if (= 200 (:status response))
+        (ring.util.response/content-type response "text/html")
+        response))))
+
 (defn wrap-exception-handling
   [handler]
   (fn [request]
@@ -43,7 +51,8 @@
 
 (def app
   (-> (handler/api app-routes)
-      (wrap-exception-handling)))
+      (wrap-exception-handling)
+      (wrap-html-response)))
 
 (defn -main []
   (jetty/run-jetty app {:port 3000}))
