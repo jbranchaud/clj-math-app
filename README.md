@@ -7,3 +7,9 @@
 ```
 $ lein ring server
 ```
+
+## Run the tests
+
+```
+$ lein test
+```
