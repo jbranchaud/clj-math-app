@@ -10,7 +10,7 @@
   (fn [request]
     (let [response (handler request)]
       (if (= 200 (:status response))
-        (ring.util.response/content-type response "text/html")
+        (ring.util.response/content-type response "text/html; charset=utf-8")
         response))))
 
 (defn wrap-exception-handling
